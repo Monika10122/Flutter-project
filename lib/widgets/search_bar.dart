@@ -1,7 +1,11 @@
+// ignore_for_file: library_private_types_in_public_api, prefer_const_declarations
+
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
+
+import 'config.dart';
 
 class SearchBar extends StatefulWidget {
   final void Function(String) onCitySelected;
@@ -25,8 +29,7 @@ class _SearchBarState extends State<SearchBar> {
       return;
     }
 
-    final apiKey =
-        'sk.eyJ1IjoibmlrYS1zb2t1cmEiLCJhIjoiY2xpNHE2NzgxMnVjdDNlbnQ0Z2l6cG9yZyJ9.knyRtUoJkrklTfZHdoeKxg';
+    final apiKey = Config.apiKey2;
     final url =
         'https://api.mapbox.com/geocoding/v5/mapbox.places/$query.json?access_token=$apiKey&types=place';
 

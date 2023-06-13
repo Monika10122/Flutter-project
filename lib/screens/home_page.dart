@@ -1,7 +1,11 @@
+// ignore_for_file: prefer_const_declarations
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+// ignore: library_prefixes
+import '../widgets/config.dart';
 // ignore: library_prefixes
 import '../widgets/search_bar.dart' as searchBar;
 // ignore: library_prefixes
@@ -21,9 +25,10 @@ class _HomePageState extends State<HomePage> {
   List<Map<String, String>> weatherForecasts = [];
 
   Future<void> fetchDataFromAPI(String city) async {
-    // ignore: prefer_const_declarations
-    final apiKey =
-        'ae738e7fa634788a0e0f6ad408234ae4'; // Замініть на свій API-ключ OpenWeatherMap
+    
+      // ignore: unused_local_variable
+      final apiKey = Config.apiKey1;
+    
     final url = Uri.parse(
         'https://api.openweathermap.org/data/2.5/weather?q=$city&appid=$apiKey&units=metric');
 
@@ -71,9 +76,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> fetchWeatherForecastsFromAPI(String city) async {
-    // ignore: prefer_const_declarations
-    final apiKey =
-        'ae738e7fa634788a0e0f6ad408234ae4'; // Замініть на свій API-ключ OpenWeatherMap
+    final apiKey = Config.apiKey1;
     final url = Uri.parse(
         'https://api.openweathermap.org/data/2.5/forecast?q=$city&appid=$apiKey&units=metric');
 
