@@ -29,6 +29,7 @@ class _SearchBarState extends State<SearchBar> {
       return;
     }
 
+
     final apiKey = Config.apiKey2;
     final url =
         'https://api.mapbox.com/geocoding/v5/mapbox.places/$query.json?access_token=$apiKey&types=place';
